@@ -1,5 +1,5 @@
-Whatsapp-Chat/node_modules
+Whatsapp-Chat/node_modules/*
 Whatsapp-Chat/package-lock.json
-world-peace-ecommerce/frontend/node_modules
+world-peace-ecommerce/frontend/node_modules/*
 world-peace-ecommerce/frontend/package-lock.json
 node_modules
