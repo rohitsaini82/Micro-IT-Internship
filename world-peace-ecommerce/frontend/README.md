@@ -14,7 +14,8 @@ cd world-peace-ecommerce/frontend
 
 ```
 - npm install
-
+```
+```
 - npm run dev
 
 ```
