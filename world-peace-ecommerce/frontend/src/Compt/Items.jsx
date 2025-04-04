@@ -18,28 +18,44 @@ function Items() {
     fetchData();
   }, []);
 
-  // Log items when they update
-  useEffect(() => {
-    if (items.length > 0) {
-      console.log("First Item:", items[0]);
-    }
-  }, [items]);
-
   return items.length < 1 ? (
     <div>Loading...</div>
   ) : (
     <div className="container">
       <div className="flex just-items" style={{ width: "80vw", marginTop: "6em", overflowX: "scroll" }}>
         {items.map((obj) => (
-          <ItemCard key={obj.id} id={obj.id} title={obj.title} image={obj.thumbnail} price={obj.price} category={obj.category} />
+          <ItemCard
+            key={obj.id}
+            id={obj.id}
+            title={obj.title}
+            image={obj.thumbnail}
+            price={obj.price}
+            category={obj.category}
+            product={obj} // Pass full object
+          />
         ))}
       </div>
     </div>
   );
 }
-import { Link } from "react-router-dom";
 
-function ItemCard({ id, image, title, price, category, addToCart }) {
+export default Items;
+
+
+
+
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/cartSlice"; // Make sure this path is correct
+import "../Css/Items.css";
+
+function ItemCard({ id, image, title, price, category, product }) {
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    console.log("Adding to cart:", product);
+    dispatch(addToCart({ ...product, quantity: 1 }));  };
+
   return (
     <div className="itemCard boxShadow">
       {/* Image Section */}
@@ -57,7 +73,7 @@ function ItemCard({ id, image, title, price, category, addToCart }) {
 
         {/* Buttons */}
         <div className="button-container">
-          <button className="add-to-cart" onClick={() => addToCart(id)}>🛒 Add to Cart</button>
+          <button className="add-to-cart" onClick={handleAddToCart}>🛒 Add to Cart</button>
           <Link to={`/product/${id}`} className="preview-btn">🔍 Preview</Link>
         </div>
       </div>
@@ -65,6 +81,3 @@ function ItemCard({ id, image, title, price, category, addToCart }) {
   );
 }
 
-
-
-export default Items;

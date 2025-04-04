@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import "../Css/Nav.css"
 import cartLogo from "./Images"
 
@@ -9,7 +9,7 @@ function Nav() {
         const menuList = document.getElementById("menuList")
 
         try {
-            const height = window.innerHeight;
+            // const height = window.innerHeight;
             setWidth(window.innerWidth);
             if (width < 900) {
                 menuList.classList.add("hide")
@@ -39,7 +39,7 @@ function Nav() {
                     <Link to="/blogs" ><li className='li'>Newstand</li></Link>
                     <Link to="/about" ><li className='li'>Who We Are</li></Link>
                     <Link to="/user-profile" ><li className='li'>My Profile</li></Link>
-                    <Link to="/cart" ><li className='li'>Basket</li></Link>
+                    <Link to="/cart" ><li className='li'>Basket 🛒</li></Link>
                     <Link to="/login"><li className='li'>Sign In</li></Link>
 
                 </ul>
@@ -55,7 +55,7 @@ function Nav() {
 import MenuIcon from "../assets/menu.png"
 import MenuIcon2 from "../assets/add.svg"
 import { Link } from 'react-router-dom';
-import Login from './Auths/Login';
+// import Login from './Auths/Login';
 
 function Hamburger() {
     const [Menu, setMenu] = useState(true)
