@@ -16,7 +16,7 @@ To run the chat web app locally, follow these steps:
 1. Clone the repository to your local machine using the following command:
 
 ```
-git clone https://github.com/rohitsaini81/Whatsapp-Chat.git
+git clone https://github.com/rohitsaini82/Micro-IT-Internship.git
 ```
 
 2. Navigate to the project directory:
@@ -41,7 +41,7 @@ cd Whatsapp-Chat
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
+//Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an //issue or submit a pull request.
 
 
 
